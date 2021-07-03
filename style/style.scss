@@ -1,0 +1,86 @@
+@import "reset" ;
+
+.box{
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(50% - 100px);
+    transform: perspective(1000px) rotateY(-45deg);
+    background: transparent;
+    -webkit-transform: perspective(1000px) rotateY(-45deg);
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;
+    div{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        transform-style: preserve-3d;
+        animation: animate 5s linear infinite ;
+        -webkit-animation: animate 5s linear infinite forwards normal;
+        span{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            background: linear-gradient(0deg,#f1f1f1,#bbb,#f1f1f1);
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            
+}
+:nth-child(1){
+    transform: rotateX(0deg);
+    -webkit-transform: rotateX(0deg);
+
+}
+:nth-child(2){
+    transform: rotateX(45deg);
+    -webkit-transform: rotateX(45deg);
+}
+:nth-child(3){
+    transform: rotateX(-45deg);
+    -webkit-transform: rotateX(-45deg);
+}
+:nth-child(4){
+    transform: rotateX(90deg);
+    -webkit-transform: rotateX(90deg);
+} 
+
+    }
+
+    @keyframes animate{
+        0%{
+            transform: perspective(1000px) rotateX(0deg);
+            -webkit-transform: perspective(1000px) rotateX(0deg);
+            -moz-transform: perspective(1000px) rotateX(0deg);
+            -ms-transform: perspective(1000px) rotateX(0deg);
+            -o-transform: perspective(1000px) rotateX(0deg);
+    }
+        100%{
+            transform: perspective(1000px) rotateX(359deg);
+            -webkit-transform: perspective(1000px) rotateX(359deg);
+            -moz-transform: perspective(1000px) rotateX(359deg);
+            -ms-transform: perspective(1000px) rotateX(359deg);
+            -o-transform: perspective(1000px) rotateX(359deg);
+    }
+    }
+}
+.box::before{
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #000;
+    filter: blur(40px);
+    -webkit-filter: blur(40px);
+    opacity: 0.5;
+    transform: rotateX(90deg);
+    -webkit-transform: rotateX(90deg);
+}
+
